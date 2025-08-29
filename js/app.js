@@ -4,63 +4,52 @@ const img    = document.querySelector('#bryceImg');
 const pins   = [...document.querySelectorAll('.pin')];
 const steps  = [...document.querySelectorAll('.step')];
 
-let BASE = null; // medidas cuando canvas = identidad (x=0,y=0,scale=1)
+let BASE = null;
 let activeTween;
 
-// Calcula medidas base sin transformaciones
 function computeBase(){
-  // Guardar transform actual
-  const m = gsap.getProperty(canvas, "transform");
-  // Forzar identidad para medir correctamente
-  gsap.set(canvas, {x:0, y:0, scale:1});
-  const canvasRect = canvas.getBoundingClientRect();
-  const imgRect = img.getBoundingClientRect();
-  BASE = {
-    canvasW: canvasRect.width,
-    canvasH: canvasRect.height,
-    imgW: imgRect.width,
-    imgH: imgRect.height,
-    imgLeft: imgRect.left - canvasRect.left,
-    imgTop:  imgRect.top  - canvasRect.top
+  const prev = {
+    x: gsap.getProperty(canvas,'x') || 0,
+    y: gsap.getProperty(canvas,'y') || 0,
+    scale: gsap.getProperty(canvas,'scale') || 1
   };
-  // Restaurar (si hubiera algo previo)
-  gsap.set(canvas, {clearProps:"transform"});
+  gsap.set(canvas, {x:0, y:0, scale:1});
+  const c = canvas.getBoundingClientRect();
+  const r = img.getBoundingClientRect();
+  BASE = {
+    canvasW: c.width, canvasH: c.height,
+    imgW: r.width, imgH: r.height,
+    imgLeft: r.left - c.left,
+    imgTop:  r.top  - c.top
+  };
+  gsap.set(canvas, {x:prev.x, y:prev.y, scale:prev.scale});
 }
 
-// Posiciona pines usando las medidas BASE
 function positionPins(){
   if(!BASE) computeBase();
   pins.forEach(pin=>{
     const px = parseFloat(pin.dataset.x), py = parseFloat(pin.dataset.y);
-    const x = BASE.imgLeft + (px/100)*BASE.imgW;
-    const y = BASE.imgTop  + (py/100)*BASE.imgH;
-    pin.style.left = x + 'px';
-    pin.style.top  = y + 'px';
+    pin.style.left = (BASE.imgLeft + (px/100)*BASE.imgW) + 'px';
+    pin.style.top  = (BASE.imgTop  + (py/100)*BASE.imgH) + 'px';
   });
 }
 
-// Devuelve el translate para centrar (px,py) con un scale dado
 function computeTransform(px,py,scale){
   if(!BASE) computeBase();
   const sticky = document.querySelector('.sticky');
   const sRect = sticky.getBoundingClientRect();
-
-  const pointX = BASE.imgLeft + (px/100)*BASE.imgW; // en coord. de canvas base
+  const pointX = BASE.imgLeft + (px/100)*BASE.imgW;
   const pointY = BASE.imgTop  + (py/100)*BASE.imgH;
-
-  const centerX = sRect.width / 2;
-  const centerY = sRect.height / 2;
-
-  const tx = centerX - pointX * scale;
-  const ty = centerY - pointY * scale;
-  return {tx, ty, scale};
+  return { tx: sRect.width/2  - pointX*scale,
+           ty: sRect.height/2 - pointY*scale,
+           scale };
 }
 
 function goTo(px,py,scale){
   const t = computeTransform(px,py,scale);
   if (activeTween) activeTween.kill();
   activeTween = gsap.to(canvas, {
-    duration: 1.0,
+    duration: 1.2,
     ease: 'power3.inOut',
     x: t.tx, y: t.ty, scale: t.scale,
     transformOrigin: '0 0',
@@ -83,7 +72,6 @@ function buildScroll(){
     });
   });
 
-  // Guardas de borde: al salir del sticky por arriba o por abajo, resetea
   ScrollTrigger.create({
     trigger: document.querySelector('.sticky'),
     start: 'top top',
@@ -94,27 +82,11 @@ function buildScroll(){
 }
 
 function init(){
-  if (img.complete){
-    computeBase();
-    positionPins();
-    buildScroll();
-  } else {
-    img.addEventListener('load', ()=>{
-      computeBase();
-      positionPins();
-      buildScroll();
-    });
-  }
+  if (img.complete){ computeBase(); positionPins(); buildScroll(); }
+  else { img.addEventListener('load', ()=>{ computeBase(); positionPins(); buildScroll(); }); }
 }
 
-ScrollTrigger.addEventListener('refreshInit', ()=>{
-  computeBase();
-  positionPins();
-});
-window.addEventListener('resize', ()=>{
-  computeBase();
-  positionPins();
-  ScrollTrigger.refresh();
-});
+ScrollTrigger.addEventListener('refresh', ()=>{ computeBase(); positionPins(); });
+window.addEventListener('resize', ()=>{ computeBase(); positionPins(); ScrollTrigger.refresh(); });
 
 init();
