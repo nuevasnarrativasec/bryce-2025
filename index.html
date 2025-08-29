@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Un mundo para Bryce — demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="copy">
+      <h1><span>Un mundo</span><br/>para <strong>Bryce</strong></h1>
+      <p>Demo funcional: scroll con zoom a personajes; cada pin abre una interior. Bryce queda siempre grande al centro.</p>
+      <div class="scroll-indicator" aria-hidden="true">▼</div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="sticky">
+      <div class="canvas" id="canvas">
+        <img id="bryceImg" src="./img/bryce.jpg" alt="Bryce" />
+        <a class="pin pin--1" href="interior.html?id=ofelia" data-x="18" data-y="63" data-scale="2.6">La enamorada</a>
+        <a class="pin pin--2" href="interior.html?id=llora" data-x="75" data-y="58" data-scale="2.8">El que llora</a>
+        <!--<a class="pin pin--3" href="interior.html?id=adolescente" data-x="9" data-y="57" data-scale="2.7">La adolescente cursi</a>
+        <a class="pin pin--4" href="interior.html?id=exiliado" data-x="13" data-y="73" data-scale="2.7">Exiliado</a>
+        <a class="pin pin--5" href="interior.html?id=abuelo" data-x="84" data-y="75" data-scale="2.8">El abuelo</a>-->
+      </div>
+    </div>
+    <section class="step" data-target=".pin--1"><h2>La enamorada</h2><p>Haz clic en el pin para abrir la interior.</p></section>
+    <section class="step" data-target=".pin--2"><h2>El que llora</h2></section>
+    <!--<section class="step" data-target=".pin--3"><h2>La adolescente cursi</h2></section>
+    <section class="step" data-target=".pin--4"><h2>El exiliado</h2></section>
+    <section class="step" data-target=".pin--5"><h2>El abuelo</h2></section>-->
+  </main>
+
+  <footer class="credits">
+    <h3>Créditos</h3>
+    <p>Producción periodística, diseño, ilustración y desarrollo — demo.</p>
+  </footer>
+
+  <script src="./js/app.js?v4"></script>
+</body>
+</html>

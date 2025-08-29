@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interior — personaje</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui;background:#fff;color:#111}
+    header{padding:1rem 1.25rem;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff}
+    main{max-width:980px;margin:0 auto;padding:1.5rem}
+    h1{font-weight:900; font-size:clamp(1.8rem,4vw,2.6rem); margin:.5rem 0 0}
+    .hero{width:100%; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.08)}
+    .meta{color:#666}
+    .back{color:#111;text-decoration:none}
+    .back:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <header><a class="back" href="index.html">← Volver</a></header>
+  <main>
+    <img class="hero" src="./img//interior-1.jpg" alt="Interior demo"/>
+    <h1 id="title">Personaje</h1>
+    <p class="meta" id="subtitle">Descripción breve del personaje seleccionado.</p>
+    <p>Esta es una plantilla de interior. Cambia el texto e imagen por el contenido real de cada personaje.</p>
+  </main>
+  <script>
+    const map = {
+      ofelia:      { title:'Ofelia — La enamorada',     subtitle:'Hermana menor, enamorada de su primo Juan.' },
+      llora:       { title:'El que llora',               subtitle:'Breve sinopsis o cita.' },
+      adolescente: { title:'La adolescente cursi',       subtitle:'Descripción corta.' },
+      exiliado:    { title:'El exiliado',                subtitle:'Descripción corta.' },
+      abuelo:      { title:'El abuelo',                  subtitle:'Descripción corta.' }
+    };
+    const id = new URLSearchParams(location.search).get('id');
+    if (id && map[id]) {
+      title.textContent = map[id].title;
+      subtitle.textContent = map[id].subtitle;
+    }
+  </script>
+</body>
+</html>
