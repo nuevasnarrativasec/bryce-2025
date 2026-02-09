@@ -197,6 +197,7 @@
         /* Inicio Section */
         .inicio-container {
             display: flex;
+            height: 100%;
             align-items: center;
             justify-content: space-between;
             width: 90%;
@@ -239,7 +240,7 @@
         .character-main {
             position: relative;
             width: 500px;
-            height: 600px;
+            height: 100%;
         }
 
         .character-main img {
@@ -281,7 +282,7 @@
         }
 
         #section-inicio .character-miniature {
-            left: 18%;
+            left: 12%;
             top: 63%;
         }
 
@@ -298,6 +299,11 @@
         #section-manuco .character-miniature{
             left: 21%;
             top: 34%;            
+        }
+
+        #section-martin .character-miniature{
+            left: 30%;
+            top: 29%;            
         }
 
         .character-layout {
