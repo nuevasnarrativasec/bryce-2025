@@ -297,6 +297,11 @@
             top: 34%;            
         }
 
+        #section-martin .character-miniature{
+            left: 30%;
+            top: 29%;            
+        }
+
         .character-layout {
             display: flex;
             align-items: center;
