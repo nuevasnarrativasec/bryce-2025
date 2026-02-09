@@ -48,14 +48,14 @@
             if (isAnimating) return;
             
             if (e.deltaY > 0 && currentSection < totalSections - 1) {
-                // Scroll down - buscar miniatura en la sección actual
+                // Scroll down - buscar miniatura en la secciÃ³n actual
                 const currentSectionEl = sections[currentSection];
                 const targetIndex = currentSection + 1;
                 const targetSectionId = sections[targetIndex].id.replace('section-', '');
                 const miniature = currentSectionEl.querySelector(`[data-next="${targetSectionId}"]`);
                 navigateToSection(targetIndex, miniature);
             } else if (e.deltaY < 0 && currentSection > 0) {
-                // Scroll up - no hay miniatura hacia atrás, usar animación genérica
+                // Scroll up - no hay miniatura hacia atrÃ¡s, usar animaciÃ³n genÃ©rica
                 navigateToSection(currentSection - 1);
             }
         }, { passive: true });
@@ -110,7 +110,10 @@
             const currentContent = currentSectionEl.querySelector('.section-content');
             const targetContent = targetSectionEl.querySelector('.section-content');
             
-            // Si hay una miniatura, obtener su posición para el zoom
+            // Remover clases de animación de la sección actual antes de salir
+            resetAnimations(currentSectionEl);
+            
+            // Si hay una miniatura, obtener su posiciÃ³n para el zoom
             if (miniatureElement) {
                 const rect = miniatureElement.getBoundingClientRect();
                 const centerX = rect.left + rect.width / 2;
@@ -122,13 +125,13 @@
                 const translateX = viewportCenterX - centerX;
                 const translateY = viewportCenterY - centerY;
                 
-                // Aplicar transformación al contenido actual
+                // Aplicar transformaciÃ³n al contenido actual
                 currentContent.style.transformOrigin = `${centerX}px ${centerY}px`;
                 currentContent.style.transform = `translate(${translateX}px, ${translateY}px) scale(3)`;
                 currentContent.style.opacity = '0';
                 currentContent.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
             } else {
-                // Zoom genérico si no hay miniatura
+                // Zoom genÃ©rico si no hay miniatura
                 currentContent.classList.add('zooming-in');
             }
             
@@ -139,17 +142,20 @@
                 currentContent.style.opacity = '';
                 currentContent.style.transition = '';
                 
-                // Ocultar sección actual
+                // Ocultar secciÃ³n actual
                 currentSectionEl.style.display = 'none';
                 currentContent.classList.remove('zooming-out', 'zooming-in');
                 
-                // Mostrar sección objetivo
+                // Remover clases de animación de la sección objetivo antes de entrar
+                resetAnimations(targetSectionEl);
+                
+                // Mostrar secciÃ³n objetivo
                 targetSectionEl.style.display = 'flex';
                 targetContent.style.transform = 'scale(0.3)';
                 targetContent.style.opacity = '0';
                 
                 setTimeout(() => {
-                    // Zoom in a la sección objetivo
+                    // Zoom in a la secciÃ³n objetivo
                     targetContent.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
                     targetContent.style.transform = 'scale(1)';
                     targetContent.style.opacity = '1';
@@ -157,7 +163,7 @@
                     setTimeout(() => {
                         targetContent.style.transition = '';
                         
-                        // Animar cajas de información
+                        // Animar cajas de informaciÃ³n
                         animateInfoBoxes(targetSectionEl);
                         
                         currentSection = targetIndex;
@@ -171,6 +177,19 @@
                     }, 600);
                 }, 50);
             }, 600);
+        }
+
+        function resetAnimations(section) {
+            const infoBoxes = section.querySelectorAll('.character-info-box');
+            const textBoxes = section.querySelectorAll('.character-text-box');
+            
+            infoBoxes.forEach(box => {
+                box.classList.remove('animate-up');
+            });
+            
+            textBoxes.forEach(box => {
+                box.classList.remove('animate-down');
+            });
         }
 
         function animateInfoBoxes(section) {
