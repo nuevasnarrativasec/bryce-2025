@@ -99,17 +99,20 @@
         .side-menu {
             position: fixed;
             top: 0;
-            right: -100%;
+            right: 0;
             width: 100%;
             height: 100vh;
             background: white;
             z-index: 999;
             padding: 100px 40px 40px;
-            transition: right 0.4s ease;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
         .side-menu.active {
-            right: 0;
+            opacity: 1;
+            visibility: visible;
         }
 
         .menu-title {
@@ -295,11 +298,6 @@
         #section-manuco .character-miniature{
             left: 21%;
             top: 34%;            
-        }
-
-        #section-martin .character-miniature{
-            left: 30%;
-            top: 29%;            
         }
 
         .character-layout {
