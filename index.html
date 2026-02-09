@@ -1,49 +1,236 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Un mundo para Bryce — demo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css?v2" />
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un mundo para Bryce</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="masthead">
-    <div class="copy">
-      <h1><span>Un mundo</span><br/>para <strong>Bryce</strong></h1>
-      <p>Demo funcional: scroll con zoom a personajes; cada pin abre una interior. Bryce queda siempre grande al centro.</p>
-      <div class="scroll-indicator" aria-hidden="true">▼</div>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo"></div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
-  </header>
 
-  <main class="stage">
-    <div class="sticky">
-      <div class="canvas" id="canvas">
-        <img id="bryceImg" src="./img/bryce.jpg" alt="Bryce" />
-        <a class="pin pin--1" href="interior.html?id=ofelia" data-x="18" data-y="63" data-scale="2.6">La enamorada</a>
-        <a class="pin pin--2" href="interior.html?id=llora" data-x="75" data-y="58" data-scale="2.8">El que llora</a>
-        <!--<a class="pin pin--3" href="interior.html?id=adolescente" data-x="9" data-y="57" data-scale="2.7">La adolescente cursi</a>
-        <a class="pin pin--4" href="interior.html?id=exiliado" data-x="13" data-y="73" data-scale="2.7">Exiliado</a>
-        <a class="pin pin--5" href="interior.html?id=abuelo" data-x="84" data-y="75" data-scale="2.8">El abuelo</a>-->
-      </div>
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <h2 class="menu-title">Personajes</h2>
+        <div class="menu-item" data-character="julius">
+            <div class="menu-item-icon">
+                <img src="./img/personaje-1.png" alt="Julius miniatura" width="100%">
+            </div>
+            <div class="menu-item-text">
+                <h3>Julius</h3>
+                <p>un inocente en la barbarie</p>
+            </div>
+        </div>
+        <div class="menu-item" data-character="sevilla">
+            <div class="menu-item-icon">ðŸ‘”</div>
+            <div class="menu-item-text">
+                <h3>Sevilla</h3>
+                <p>Lorna una vez, lorna siempre</p>
+            </div>
+        </div>
+        <div class="menu-item" data-character="manuco">
+            <div class="menu-item-icon">ðŸ“</div>
+            <div class="menu-item-text">
+                <h3>MaÃ±uco</h3>
+                <p>entre la expectativa familiar y el deseo propio</p>
+            </div>
+        </div>
+        <div class="menu-item" data-character="martin">
+            <div class="menu-item-icon">âœï¸</div>
+            <div class="menu-item-text">
+                <h3>MartÃ­n RomaÃ±a</h3>
+                <p>una pequeÃ±a rebeliÃ³n interna</p>
+            </div>
+        </div>
     </div>
-    <section class="step" data-target=".pin--1"><h2>La enamorada</h2><p>Haz clic en el pin para abrir la interior.</p></section>
-    <section class="step" data-target=".pin--2"><h2>El que llora</h2></section>
-    <!--<section class="step" data-target=".pin--3"><h2>La adolescente cursi</h2></section>
-    <section class="step" data-target=".pin--4"><h2>El exiliado</h2></section>
-    <section class="step" data-target=".pin--5"><h2>El abuelo</h2></section>-->
-  </main>
 
-  <div class="show-complete" style="width: 100%;"></div>
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Section 0: Inicio -->
+        <section class="section" id="section-inicio" data-section="0">
+            <div class="section-content">
+                <div class="inicio-container">
+                    <div class="inicio-text">
+                        <h1 class="inicio-title">
+                            Un mundo para
+                            <span class="bryce">Bryce</span>
+                        </h1>
+                        <div class="inicio-description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit tincidunt lacus, magna mauris sociis augue non mi senectus dictum, in ridiculus rutrum vitae varius.</p>
+                        </div>
+                    </div>
+                    <div class="inicio-character">
+                        <div class="character-main">
+                            <img src="./img/bryce-inicio.png" alt="Bryce Echenique" width="100%">
+                            <div class="character-miniature" data-next="julius">
+                                <img src="./img/personaje-1.png" alt="Julius miniatura">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer class="credits">
-    <h3>Créditos</h3>
-    <p>Producción periodística, diseño, ilustración y desarrollo — demo.</p>
-  </footer>
+        <!-- Section 1: Julius -->
+        <section class="section" id="section-julius" data-section="1">
+            <div class="section-content">
+                <div class="character-section">
+                    <div class="character-layout">
+                        <div class="character-left">
+                            <div class="character-info-box">
+                                <h2>Julius</h2>
+                                <p class="subtitle">un inocente en la barbarie</p>
+                                <div class="circle-info">
+                                    <h3>Un mundo para Julius</h3>
+                                    <p class="year">1970</p>
+                                    <p>El protagonista de la primera novela de Bryce Echenique, un niÃ±o que es testigo inocente de dinÃ¡micas sociales en las que no puede intervenir.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-center">
+                            <div class="character-image">
+                                <img src="./img/personaje-1.png" alt="Julius">
+                                <div class="character-miniature" data-next="sevilla">
+                                    <img src="./img/personaje-2.png" alt="Sevilla miniatura">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-right">
+                            <div class="character-text-box">                                
+                                <p>En su condición de niño, el pequeño Julius se siente en la libertad de moverse por espacios que, para sus mayores, no deben ser franqueados. La cercanía que este pequeño miembro de la oligarquía hacia la servidumbre es una muestra de su inocencia; esto lo hace además el protagonista ideal, porque puede moverse con soltura entre ambos mundos. Tal y como Abelardo Oquendo escribió para este Diario en 1971, es “el niño sensible y solitario que va descubriendo una realidad cruel que no comprende pero que aprende con tristeza y pesar. Así, Julius no es sólo el protagonista del libro sino también su instrumento de exploración”.</p>
+                                <div class="character-quote">
+                                    “Fuerte Apache era el dormitorio de Julius. Allí estaban todos los cowboys del mundo pegados a las paredes. (…) Los indios ya habían muerto todos para que Julius se pudiera acostar tranquilo y sin reclamar”.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script src="./js/app.js?v14"></script>
+        <!-- Section 2: Sevilla -->
+        <section class="section" id="section-sevilla" data-section="2">
+            <div class="section-content">
+                <div class="character-section">
+                    <div class="character-layout">
+                        <div class="character-left">
+                            <div class="character-info-box">
+                                <h2>Sevilla</h2>
+                                <p class="subtitle">Lorna una vez, lorna siempre</p>
+                                <div class="circle-info">
+                                    <h3>Muerte de Sevilla en Madrid</h3>
+                                    <p class="year">1972</p>
+                                    <p>El escritor demuestra una vez mÃ¡s que puede escribir personajes no solo miserables, sino patÃ©ticos hasta decir basta.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-center">
+                            <div class="character-image">
+                                <img src="personaje2.jpg" alt="Sevilla">
+                                <div class="character-miniature" data-next="manuco">
+                                    <img src="personaje3.jpg" alt="MaÃ±uco miniatura">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-right">
+                            <div class="character-text-box">
+                                <div class="arrow-indicator arrow-down">â†“ ESTE BLOQUE DE INFORMACIÃ“N<br>VIENE DE ARRIBA HACIA ABAJO</div>
+                                <p>Sevilla es tan insignificante, tan mÃ­nimo en su esencia humana que no se permite fantasear con mujeres. No, eso es pecado; las chicas que intenta ver en la calle las imagina como cisnes para el que quizÃ¡s fue su Ãºnico y cuya muerte lo marcÃ³ para siempre. Empleado de la municipalidad de Lima, entrÃ³ sin buscarlo a un concurso que terminÃ³ ganando y por el cual tendrÃ¡ que viajar a EspaÃ±a, dejando en la ciudad a su anciana y muy catÃ³lica tÃ­a. "Envuelto cÃ³modamente en una gruesa capa de prejuicios y de formas inautÃ©nticas de vida, vÃ­ctima fÃ¡cil de 'un criollismo algo amargado', Sevilla vive en un mundo iluso, incapaz de dirigir su propia existencia", contÃ³ en ese entonces el crÃ­tico JosÃ© Miguel Oviedo.</p>
+                                <div class="character-quote">
+                                    "Sevilla sentÃ­a de golpe la profunda tristeza de haber quedado abandonado en la calle".
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: MaÃ±uco -->
+        <section class="section" id="section-manuco" data-section="3">
+            <div class="section-content">
+                <div class="character-section">
+                    <div class="character-layout">
+                        <div class="character-left">
+                            <div class="character-info-box">
+                                <h2>MaÃ±uco</h2>
+                                <p class="subtitle">entre la expectativa familiar y el deseo propio</p>
+                                <div class="circle-info">
+                                    <h3>Dos seÃ±oras conversan</h3>
+                                    <p class="year">1990</p>
+                                    <p>Â¿Hasta dÃ³nde estarÃ­as dispuesto a llegar con tal de conseguir un objetivo que ni siquiera es tuyo, sino de tus padres?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-center">
+                            <div class="character-image">
+                                <img src="personaje3.jpg" alt="MaÃ±uco">
+                                <div class="character-miniature" data-next="martin">
+                                    <img src="personaje4.jpg" alt="MartÃ­n RomaÃ±a miniatura">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-right">
+                            <div class="character-text-box">
+                                <div class="arrow-indicator arrow-down">â†“ ESTE BLOQUE DE INFORMACIÃ“N<br>VIENE DE ARRIBA HACIA ABAJO</div>
+                                <p>En una de las tres novelas breves que componen "Dos seÃ±oras conversan", el personaje MaÃ±uco Cisneros recuerda a la persona que en buena parte forjÃ³ su adolescencia. Encontrar la billetera perdida del gringo Pancho Malkovich, ingeniero de la Cerro de Pasco Cooper Corporation, lo puso en lo que entonces creyÃ³ que era el camino para cumplir el sueÃ±o de sus padres: que estudie en Estados Unidos, lejos del comÃºn de los peruanos. Tanto quiso seguir ese camino que incluso dejÃ³ plantada a su cita por irse a almorzar con el gringo y su sÃ©quito. AÃ±os despuÃ©s este encuentro tendrÃ¡ una resoluciÃ³n entre nostalgia y golpe de realidad.</p>
+                                <div class="character-quote">
+                                    "La moraleja de todo aquello serÃ­a papÃ¡, mamÃ¡, realmente he estado en un lugar donde el diablo perdiÃ³ el poncho".
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: MartÃ­n RomaÃ±a -->
+        <section class="section" id="section-martin" data-section="4">
+            <div class="section-content">
+                <div class="character-section">
+                    <div class="character-layout">
+                        <div class="character-left">
+                            <div class="character-info-box">
+                                <h2>MartÃ­n RomaÃ±a</h2>
+                                <p class="subtitle">una pequeÃ±a rebeliÃ³n interna</p>
+                                <div class="circle-info">
+                                    <h3>Cuadernos de navegaciÃ³n en un sillÃ³n Voltaire</h3>
+                                    <p class="year">1981-1985</p>
+                                    <p>El alter ego definitivo de un autor que hace ejercicio de una voz propia e inconfundible. Hay demasiados puntos en comÃºn entre Alfredo Bryce Echenique y su creaciÃ³n, MartÃ­n RomaÃ±a.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-center">
+                            <div class="character-image">
+                                <img src="personaje4.jpg" alt="MartÃ­n RomaÃ±a">
+                            </div>
+                        </div>
+                        <div class="character-right">
+                            <div class="character-text-box">
+                                <div class="arrow-indicator arrow-down">â†“ ESTE BLOQUE DE INFORMACIÃ“N<br>VIENE DE ARRIBA HACIA ABAJO</div>
+                                <p>Ambos son escritores peruanos, los dos vienen de familias de rancio abolengo y se fueron a ParÃ­s en su juventud por una beca; allÃ­ trabajaron en esa ciudad como profesores. Pero las diferencias acaban aquÃ­, porque mientras el hombre real cosechÃ³ Ã©xito con sus obras el ficticio fue el escritor que no escribÃ­a nada. Cuando por fin tiene las mejores ideas, ya es demasiado tarde. Su saga de altibajos humorÃ­stico no alcanzaba en un solo libro, asÃ­ que el autor le dio dos: "La vida exagerada de MartÃ­n RomaÃ±a" (1981) y "El hombre que hablaba de Octavia de CÃ¡diz" (1985).</p>
+                                <div class="character-quote">
+                                    "Le estaba bastando una miradita al departamento para llegar a la conclusiÃ³n de que yo era el escritor mÃ¡s fracasado del mundo".
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="scroll-indicator" id="scrollIndicator">
+        Scroll para explorar
+    </div>
+    <script src="./js/main.js"></script>
 </body>
 </html>
