@@ -37,503 +37,925 @@
     font-style: italic;
 }
 
-        body {
-            font-family: 'Georgia', serif;
-            overflow-x: hidden;
-            background: url('../img/bg-main.jpg') no-repeat center center;
-            background-size: cover;
-            scroll-behavior: smooth;
+body {
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+    background: url('../img/bg-main.jpg') no-repeat center center;
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #333;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 999;
+    padding: 100px 40px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.side-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-title {
+    font: 1.5rem / 1.1 'Behind The Nineties SemiBold';
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    background: #f9f9f9;
+    padding-left: 10px;
+}
+
+.menu-item-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.menu-item-icon img{
+    max-width: 20px;
+}
+
+.menu-item-text h3 {
+    font: 2rem / 1.1 'Chillends';
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.menu-item-text p {
+    font: 1rem / 1.1 'Behind The Nineties Medium';
+    color: #000;
+}
+
+/* Sections */
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    z-index: 20;
+}
+
+/* Background texture */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);*/
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Inicio Section */
+.inicio-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1400px;
+}
+
+.inicio-text {
+    flex: 1;
+}
+
+.inicio-title {
+    font: 3.2rem / 1.1 'Behind The Nineties Medium';
+    margin-bottom: 30px;
+    max-width: 445px;
+    text-align: right;            
+}
+
+.inicio-title .bryce {            
+    display: block;
+    font:  12.5rem/0.2 'Chillends';
+    left: -15px;
+    position: relative;
+}
+
+.inicio-description {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 500px;
+    padding: 70px 20px 0;
+}
+
+.inicio-character {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-main {
+    position: relative;
+    width: 500px;
+    height: 100%;
+}
+
+.character-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.character-miniature {
+    position: absolute;
+    top: 65%;
+    left: 18%;
+    width: 35px;
+    height: 42px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+    padding: 3px;
+}
+
+.character-miniature:hover {
+    transform: scale(1.15);
+}
+
+.character-miniature img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Character Sections */
+.character-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 80px 60px;
+}
+
+#section-inicio .character-miniature {
+    left: 12%;
+    top: 63%;
+}
+
+#section-julius .character-miniature{
+    left: 29%;
+    top: 29%;            
+}
+
+#section-sevilla .character-miniature{
+    left: 27%;
+    top: 29%;            
+}
+
+#section-manuco .character-miniature{
+    left: 21%;
+    top: 34%;            
+}
+
+#section-martin .character-miniature{
+    left: 30%;
+    top: 29%;            
+}
+
+.character-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    gap: 60px;
+}
+
+.character-left {
+    flex: 0 0 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.character-info-box {
+    border-radius: 8px;
+    opacity: 0;
+    text-align: center;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.character-info-box.animate-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.character-info-box h2 {
+    font: 6rem/.9 'Chillends';
+}
+
+.character-info-box .subtitle {
+    font: 1.2rem/1.1 'Behind The Nineties SemiBold';
+    margin-bottom: 30px;
+}
+
+.character-info-box .circle-info {
+    background: #000;
+    color: white;
+    padding: 30px;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.circle-info h3 {
+    font: 2.2rem/1 'Behind The Nineties Regular';
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.circle-info .year {
+    font: 1rem/1 "Roboto", sans-serif;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.circle-info p {
+    font: .9rem/1.4 "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.character-center {
+    flex: 0 0 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-image {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.character-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.character-text-box {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 0.8s ease;
+}
+
+.character-text-box.animate-down {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.character-text-box p {
+    background-color: #fff;
+    padding: 40px;
+    font: .9rem/1.1 "Roboto", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.character-text-box p span{
+    font-weight: 800;
+}
+
+.character-quote {
+    font: 1rem/1.6 "Roboto", sans-serif;
+    font-weight: 800;
+    background: #000;
+    color: white;
+    padding: 30px;
+    font-style: italic;
+}
+
+.arrow-indicator {
+    position: absolute;
+    color: #d32f2f;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.arrow-up {
+    top: -40px;
+    right: 20px;
+}
+
+.arrow-down {
+    top: -40px;
+    right: 20px;
+}
+
+/* Zoom effect */
+.zooming-out {
+    transform: scale(0.3);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zooming-in {
+    transform: scale(3);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #666;
+    animation: bounce 2s infinite;
+    z-index: 100;
+}
+
+/* Indicador móvil - oculto en desktop */
+.mobile-scroll-hint {
+    display: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .character-layout {
+        /*flex-direction: column;
+        gap: 30px;*/
+        gap: 15px;
+    }
+
+    .character-left,
+    .character-center,
+    .character-right {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .character-center{
+        width: 50%;
+    }
+
+    .inicio-container {
+        /*flex-direction: column;
+        text-align: center;*/
+    }
+
+    .inicio-text {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .character-section{
+        padding: 80px 20px;
+    }
+
+    .character-info-box .circle-info{
+        height: 310px;
+        width: 310px;       
+    }
+
+    #section-julius .character-miniature{
+        left: 18%;
+        top: 29%;
+    }
+    #section-sevilla .character-miniature{
+        left: 15%;
+        top: 29%;
+    }
+    #section-manuco .character-miniature{
+        left: 7%;
+        top: 34%;
+    }
+    #section-martin .character-miniature{
+        left: 17%;
+        top: 29%;
+    }
+
+}
+
+/* ========================================
+   MOBILE STYLES
+   ======================================== */
+@media (max-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+
+    body.mobile-mode {
+        overflow: hidden;
+    }
+
+    /* Sections en mÃ³vil - fullscreen */
+    .section {
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        display: none;
+        position: relative;
+    }
+
+    .section.mobile-active {
+        display: flex !important;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .section-content {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    /* Character Section mÃ³vil */
+    .character-section {
+        height: auto;
+        min-height: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .character-layout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    /* ===== TÃTULO ARRIBA ===== */
+    .character-left {
+        order: 1;
+        width: 100%;
+        padding: 80px 25px 20px;
+        flex: 0 0 auto;
+    }
+
+    .character-info-box {
+        opacity: 1;
+        transform: none;
+        text-align: center;
+    }
+
+    .character-info-box h2 {
+        font-size: 4rem;
+        line-height: 0.9;
+        margin-bottom: 5px;
+    }
+
+    .character-info-box .subtitle {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    /* CÃ­rculo - oculto inicialmente, aparece por separado */
+    .character-info-box .circle-info {
+        display: none;
+    }
+
+    /* ===== PERSONAJE CENTRAL STICKY ===== */
+    .character-center {
+        order: 2;
+        position: sticky;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        pointer-events: none;
+        padding: 20px 0;
+        margin: -20vh 0;
+    }
+
+    .character-image {
+        height: auto;
+        width: 55%;
+        max-width: 220px;
+    }
+
+    .character-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Miniatura - oculta en mÃ³vil, navegaciÃ³n solo por scroll */
+    .character-miniature {
+        display: none;
+    }
+
+    /* ===== CONTENIDO QUE HACE SCROLL ===== */
+    .character-right {
+        order: 3;
+        width: 100%;
+        padding: 45vh 25px 100px; /* Padding top significativo para requerir scroll */
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* CÃ­rculo mÃ³vil - lo movemos aquÃ­ */
+    .mobile-circle-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .character-right .circle-info {
+        background: #000;
+        color: white;
+        padding: 25px;
+        border-radius: 50%;
+        width: 280px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+
+        margin: 0 auto;
+    }
+
+    .character-right .circle-info.mobile-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .character-right .circle-info h3 {
+        font: 1.8rem/1 'Behind The Nineties Regular';
+        margin-bottom: 8px;
+    }
+
+    .character-right .circle-info .year {
+        font: 1rem/1 "Roboto", sans-serif;
+        font-weight: 900;
+        margin-bottom: 12px;
+    }
+
+    .character-right .circle-info p {
+        font: 0.85rem/1.4 "Roboto", sans-serif;
+    }
+
+    /* Text box mÃ³vil */
+    .character-text-box {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .character-text-box.mobile-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .character-text-box p {
+        padding: 25px;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        background: rgba(255,255,255,0.95);
+    }
+
+    .character-quote {
+        padding: 25px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* ===== HOMBRO ===== */
+    .hombro-1,
+    .hombro-2 {
+        display: none;
+        position: relative;
+        width: 100%;
+        margin-top: -50px;
+        z-index: 15;
+        order: 4;
+    }
+
+    /* ===== INICIO SECTION ===== */
+    #section-inicio .section-content {
+        min-height: 100vh;
+        min-height: 100dvh;
+        justify-content: center;
+        padding: 50px 20px 0;
+    }
+
+    #section-inicio .character-center {
+        position: relative;
+        top: auto;
+        transform: none;
+        margin: 0;
+    }
+
+    .inicio-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        height: auto;
+    }
+
+    .inicio-text {
+        order: 1;
+    }
+
+    .inicio-title {
+        font-size: 3rem;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .inicio-title .bryce {
+        font-size: 11rem;
+        left: -65px;
+    }
+
+    .inicio-description {
+        font-size: 1.2rem;
+        padding: 50px;
+        max-width: 100%;
+    }
+
+    .inicio-character {
+        order: 2;
+    }
+
+    .character-main {
+        width: 250px;
+    }
+
+    #section-inicio .character-miniature {
+        display: none;
+    }
+
+    /* Scroll indicator mÃ³vil */
+    .scroll-indicator {
+        display: none;
+    }
+    
+    /* Indicador de scroll mÃ³vil para secciones de personajes */
+    .mobile-scroll-hint {
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 50;
+        pointer-events: none;
+    }
+    
+    .mobile-scroll-hint.visible {
+        opacity: 1;
+    }
+    
+    .mobile-scroll-hint.hidden {
+        opacity: 0;
+    }
+    
+    .mobile-scroll-hint span {
+        font-size: 12px;
+        color: #666;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .mobile-scroll-hint .chevron {
+        width: 20px;
+        height: 20px;
+        border-right: 2px solid #666;
+        border-bottom: 2px solid #666;
+        transform: rotate(45deg);
+        animation: scrollBounce 1.5s infinite;
+    }
+    
+    @keyframes scrollBounce {
+        0%, 100% { transform: rotate(45deg) translateY(0); }
+        50% { transform: rotate(45deg) translateY(5px); }
+    }
+
+    .inicio-container{
+        width: 100%;
+    }
+
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 640px) {
+
+    .inicio-container{
+        width: 100%;
+    }
+        .inicio-title{
+            font-size: 1.6rem;
         }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 20px 40px;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Georgia', serif;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            width: 40px;
-            height: 30px;
-            cursor: pointer;
-            position: relative;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background: #333;
-            margin: 6px 0;
-            transition: 0.3s;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(8px, -8px);
-        }
-
-        /* Side Menu */
-        .side-menu {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100vh;
-            background: white;
-            z-index: 999;
-            padding: 100px 40px 40px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-        }
-
-        .side-menu.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .menu-title {
-            font: 1.5rem / 1.1 'Behind The Nineties SemiBold';
-            margin-bottom: 40px;
-            color: #333;
-        }
-
-        .menu-item {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .menu-item:hover {
-            background: #f9f9f9;
-            padding-left: 10px;
-        }
-
-        .menu-item-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-
-            .menu-item-icon img{
-                max-width: 20px;
-            }
-
-        .menu-item-text h3 {
-            font: 2rem / 1.1 'Chillends';
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-
-        .menu-item-text p {
-            font: 1rem / 1.1 'Behind The Nineties Medium';
-            color: #000;
-        }
-
-        /* Sections */
-        .section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section-content {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            transition: transform 0.8s ease, opacity 0.8s ease;
-        }
-
-        /* Background texture */
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            opacity: 0.5;
-            z-index: -1;
-        }
-
-        /* Inicio Section */
-        .inicio-container {
-            display: flex;
-            height: 100%;
-            align-items: center;
-            justify-content: space-between;
-            width: 90%;
-            max-width: 1400px;
-        }
-
-        .inicio-text {
-            flex: 1;
-        }
-
-        .inicio-title {
-            font: 3.2rem / 1.1 'Behind The Nineties Medium';
-            margin-bottom: 30px;
-            max-width: 445px;
-            text-align: right;            
-        }
-
-        .inicio-title .bryce {            
-            display: block;
-            font:  12.5rem/0.2 'Chillends';
+        .inicio-title .bryce {
+            font-size: 8rem;
             left: -15px;
-            position: relative;
         }
 
-        .inicio-description {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 500px;
-            padding: 70px 20px 0;
+    .character-info-box h2 {
+        font-size: 3.2rem;
+    }
+
+    .character-right .circle-info {
+        height: 280px;
+        margin: 0 auto;
+        padding: 46px;
+        width: 280px;
+    }
+
+    .character-right .circle-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .character-main {
+        width: 200px;
+    }
+
+    .character-image {
+        max-width: 43%;
+    }
+
+    .side-menu{
+        padding: 30px 40px 40px;
+    }
+        .menu-item-icon{
+            width: 20px;
         }
 
-        .inicio-character {
-            flex: 1;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+}
 
-        .character-main {
-            position: relative;
-            width: 500px;
-            height: 100%;
-        }
+/* Geometric shapes for decoration */
+.shape-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(211, 47, 47, 0.1);
+    z-index: 0;
+}
 
-        .character-main img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+.shape-1 {
+    width: 200px;
+    height: 200px;
+    bottom: 10%;
+    left: 5%;
+}
 
-        .character-miniature {
-            position: absolute;
-            top: 65%;
-            left: 18%;
-            width: 35px;
-            height: 42px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 10;
-            padding: 3px;
-        }
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 15%;
+    right: 10%;
+    background: rgba(139, 69, 19, 0.1);
+}
 
-        .character-miniature:hover {
-            transform: scale(1.15);
-        }
+.hombro-1{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
 
-        .character-miniature img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Character Sections */
-        .character-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            padding: 80px 60px;
-        }
-
-        #section-inicio .character-miniature {
-            left: 12%;
-            top: 63%;
-        }
-
-        #section-julius .character-miniature{
-            left: 29%;
-            top: 29%;            
-        }
-
-        #section-sevilla .character-miniature{
-            left: 27%;
-            top: 29%;            
-        }
-
-        #section-manuco .character-miniature{
-            left: 21%;
-            top: 34%;            
-        }
-
-        #section-martin .character-miniature{
-            left: 30%;
-            top: 29%;            
-        }
-
-        .character-layout {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1400px;
-            gap: 60px;
-        }
-
-        .character-left {
-            flex: 0 0 400px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .character-info-box {
-            border-radius: 8px;
-            opacity: 0;
-            text-align: center;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .character-info-box.animate-up {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .character-info-box h2 {
-            font: 6rem/.9 'Chillends';
-        }
-
-        .character-info-box .subtitle {
-            font: 1.2rem/1.1 'Behind The Nineties SemiBold';
-            margin-bottom: 30px;
-        }
-
-        .character-info-box .circle-info {
-            background: #000;
-            color: white;
-            padding: 30px;
-            border-radius: 50%;
-            width: 350px;
-            height: 350px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .circle-info h3 {
-            font: 2.2rem/1 'Behind The Nineties Regular';
-            margin-bottom: 10px;
-            padding: 0 10px;
-        }
-
-        .circle-info .year {
-            font: 1rem/1 "Roboto", sans-serif;
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
-
-        .circle-info p {
-            font: .9rem/1.4 "Roboto", sans-serif;
-            font-weight: 400;
-        }
-
-        .character-center {
-            flex: 0 0 300px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .character-image {
-            width: 100%;
-            height: 500px;
-            position: relative;
-        }
-
-        .character-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .character-right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .character-text-box {
-            opacity: 0;
-            transform: translateY(-50px);
-            transition: all 0.8s ease;
-        }
-
-        .character-text-box.animate-down {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .character-text-box p {
-            background-color: #fff;
-            padding: 40px;
-            font: .9rem/1.1 "Roboto", sans-serif;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-            .character-text-box p span{
-                font-weight: 800;
-            }
-
-        .character-quote {
-            font: 1rem/1.6 "Roboto", sans-serif;
-            font-weight: 800;
-            background: #000;
-            color: white;
-            padding: 30px;
-            font-style: italic;
-        }
-
-        .arrow-indicator {
-            position: absolute;
-            color: #d32f2f;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .arrow-up {
-            top: -40px;
-            right: 20px;
-        }
-
-        .arrow-down {
-            top: -40px;
-            right: 20px;
-        }
-
-        /* Zoom effect */
-        .zooming-out {
-            transform: scale(0.3);
-            opacity: 0;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .zooming-in {
-            transform: scale(3);
-            opacity: 0;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 14px;
-            color: #666;
-            animation: bounce 2s infinite;
-            z-index: 100;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .character-layout {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .character-left,
-            .character-center,
-            .character-right {
-                flex: 1 1 auto;
-                width: 100%;
-            }
-
-            .inicio-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .inicio-text {
-                padding-right: 0;
-                margin-bottom: 40px;
-            }
-        }
-
-        /* Geometric shapes for decoration */
-        .shape-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(211, 47, 47, 0.1);
-            z-index: 0;
-        }
-
-        .shape-1 {
-            width: 200px;
-            height: 200px;
-            bottom: 10%;
-            left: 5%;
-        }
-
-        .shape-2 {
-            width: 150px;
-            height: 150px;
-            top: 15%;
-            right: 10%;
-            background: rgba(139, 69, 19, 0.1);
-        }
+.hombro-2{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
