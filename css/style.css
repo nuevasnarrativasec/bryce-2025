@@ -972,11 +972,16 @@ body {
 /* Pantallas muy pequeñas */
 @media (max-width: 640px) {
 
+    #section-inicio .section-content{
+        padding: 2% 20px 0;
+    }
+
     .inicio-container{
         width: 100%;
     }
         .inicio-title{
             font-size: 1.6rem;
+            margin-bottom: 4rem;
         }
         .inicio-title .bryce {
             font-size: 8rem;
@@ -1035,6 +1040,10 @@ body {
     .hombro-6,
     .hombro-7 {
         display: none;
+    }
+
+    #section-creditos .section-content{
+        justify-content: center;
     }
 
 }
