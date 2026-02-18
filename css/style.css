@@ -228,7 +228,7 @@ body {
 
 .inicio-title .bryce {            
     display: block;
-    font:  12.5rem/0.2 'Chillends';
+    font:  12.5rem/0.2 'Chillends', sans-serif;
     left: -15px;
     position: relative;
 }
