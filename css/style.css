@@ -161,7 +161,7 @@ body {
 }
 
 .menu-item-text h3 {
-    font: 2rem / 1.1 'Chillends';
+    font: 2rem / 1.1 "Mr Dafoe", cursive;
     font-style: italic;
     margin-bottom: 5px;
 }
@@ -228,8 +228,8 @@ body {
 
 .inicio-title .bryce {            
     display: block;
-    font:  12.5rem/0.2 'Chillends', sans-serif;
-    left: -15px;
+    font: 12.5rem / 0.4 "Mr Dafoe", cursive;
+    left: -25px;
     position: relative;
 }
 
@@ -335,7 +335,7 @@ body {
     justify-content: space-between;
     width: 100%;
     max-width: 1400px;
-    gap: 60px;
+    gap: 10px;
 }
 
 .character-left {
@@ -359,7 +359,7 @@ body {
 }
 
 .character-info-box h2 {
-    font: 6rem/.9 'Chillends';
+    font: 5.2rem/1 "Mr Dafoe", cursive;
 }
 
 .character-info-box .subtitle {
@@ -572,7 +572,7 @@ body {
     background: #fff;
 }
     #section-cumpleanos h4{
-        font: 5rem / 0.2 'Chillends';
+        font: 5rem / 0.2 "Mr Dafoe", cursive;
         position: absolute;
         z-index: 10;
         transform: translate(-50%, -50%);
@@ -1090,7 +1090,7 @@ body {
     #section-octavia .box-nombre-movil h2,
     #section-manuco .box-nombre-movil h2,
     #section-manongo .box-nombre-movil h2{        
-        font: 4rem / .9 'Chillends';   
+        font: 4rem / .9 "Mr Dafoe", cursive;
     }
 
     #section-octavia .character-image{
@@ -1115,7 +1115,7 @@ body {
         width: 75%;
     }
     #section-cumpleanos h4{
-        font: 3rem / 1 'Chillends';
+        font: 3rem / 1 "Mr Dafoe", cursive;
     }
 
 }
