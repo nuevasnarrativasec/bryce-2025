@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Un mundo para Bryce</title>
-    <link rel="stylesheet" href="css/style.css?v10">
+    <link rel="stylesheet" href="css/style.css?v11">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +33,15 @@
                 <p>un inocente en la barbarie</p>
             </div>
         </div>
+        <div class="menu-item" data-character="vilma">
+            <div class="menu-item-icon">
+                <img src="./img/personaje-6.png" alt="Vilma miniatura" width="100%">
+            </div>
+            <div class="menu-item-text">
+                <h3>Vilma</h3>
+                <p>madre es la que cría</p>
+            </div>
+        </div>
         <div class="menu-item" data-character="sevilla">
             <div class="menu-item-icon">
                 <img src="./img/personaje-2.png" alt="Sevilla miniatura" width="100%">
@@ -40,15 +49,6 @@
             <div class="menu-item-text">
                 <h3>Sevilla</h3>
                 <p>Lorna una vez, lorna siempre</p>
-            </div>
-        </div>
-        <div class="menu-item" data-character="manuco">
-            <div class="menu-item-icon">
-                <img src="./img/personaje-3.png" alt="Mañuco miniatura" width="100%">
-            </div>
-            <div class="menu-item-text">
-                <h3>Mañuco</h3>
-                <p>entre la expectativa familiar y el deseo propio</p>
             </div>
         </div>
         <div class="menu-item" data-character="martin">
@@ -60,24 +60,6 @@
                 <p>una pequeña rebelión interna</p>
             </div>
         </div>
-        <div class="menu-item" data-character="manongo">
-            <div class="menu-item-icon">
-                <img src="./img/personaje-5.png" alt="Manongo Sterne miniatura" width="100%">
-            </div>
-            <div class="menu-item-text">
-                <h3>Manongo Sterne</h3>
-                <p>un testigo de la decadencia</p>
-            </div>
-        </div>
-        <div class="menu-item" data-character="vilma">
-            <div class="menu-item-icon">
-                <img src="./img/personaje-6.png" alt="Vilma miniatura" width="100%">
-            </div>
-            <div class="menu-item-text">
-                <h3>Vilma</h3>
-                <p>madre es la que cría</p>
-            </div>
-        </div>
         <div class="menu-item" data-character="octavia">
             <div class="menu-item-icon">
                 <img src="./img/personaje-7.png" alt="Octavia miniatura" width="100%">
@@ -85,6 +67,24 @@
             <div class="menu-item-text">
                 <h3>Octavia de Cádiz</h3>
                 <p>la única que aguanta al protagonista</p>
+            </div>
+        </div>
+        <div class="menu-item" data-character="manuco">
+            <div class="menu-item-icon">
+                <img src="./img/personaje-3.png" alt="Mañuco miniatura" width="100%">
+            </div>
+            <div class="menu-item-text">
+                <h3>Mañuco</h3>
+                <p>entre la expectativa familiar y el deseo propio</p>
+            </div>
+        </div>        
+        <div class="menu-item" data-character="manongo">
+            <div class="menu-item-icon">
+                <img src="./img/personaje-5.png" alt="Manongo Sterne miniatura" width="100%">
+            </div>
+            <div class="menu-item-text">
+                <h3>Manongo Sterne</h3>
+                <p>un testigo de la decadencia</p>
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
                         <div class="character-main">
                             <img src="./img/bryce-inicio.png" alt="Bryce Echenique" width="100%">
                             <div class="character-miniature" data-next="julius">
-                                <img src="./img/personaje-1.png" alt="Julius miniatura">
+                                <img src="./img/personaje-1.png?v2" alt="Julius miniatura">
                             </div>
                         </div>
                     </div>
@@ -134,9 +134,9 @@
                         </div>
                         <div class="character-center">
                             <div class="character-image">
-                                <img src="./img/personaje-1.png" alt="Julius">
-                                <div class="character-miniature" data-next="sevilla">
-                                    <img src="./img/personaje-2.png" alt="Sevilla miniatura">
+                                <img src="./img/personaje-1.png?v2" alt="Julius">
+                                <div class="character-miniature" data-next="vilma">
+                                    <img src="./img/personaje-6.png" alt="Sevilla miniatura">
                                 </div>
                             </div>
                         </div>
@@ -154,8 +154,46 @@
             <img src="./img/hombro-1.png" alt="" width="100%" class="hombro-1">
         </section>
 
-        <!-- Section 2: Sevilla -->
-        <section class="section" id="section-sevilla" data-section="2">
+        <!-- Section 2: Vilma -->
+        <section class="section" id="section-vilma" data-section="2">
+            <div class="section-content">
+                <div class="character-section">
+                    <div class="character-layout">
+                        <div class="character-left">
+                            <div class="character-info-box">
+                                <h2>Vilma</h2>
+                                <p class="subtitle">madre es la que cría</p>
+                                <div class="circle-info">
+                                    <h3>Un mundo <br> para Julius</h3>
+                                    <p class="year">1970</p>
+                                    <p>Víctima de un sistema que solo busca perpetuarse, Vilma hizo todo lo que su entorno esperó de ella y aún así la desecharon.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-center">
+                            <div class="character-image">
+                                <img src="./img/personaje-6.png" alt="Vilma">
+                                <div class="character-miniature" data-next="sevilla">
+                                    <img src="./img/personaje-2.png" alt="Sevilla miniatura">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-right">
+                            <div class="character-text-box">                                
+                                <p>Con el punto de vista que Bryce elige para “Un mundo para Julius”, queda claro que el mundo juzga a Vilma por su apariencia: al pensar en ella los adultos primero destacan su origen andino y, segundo, su atractivo físico. Pero donde los demás solo ven con los ojos, Julius vio con el corazón; encontró en ella a la madre que doña Susan eligió no ser. Por eso mismo duele tanto que, cuando ha sufrido violencia en la casa de sus empleadores, estos la despidan y premien a su agresor, hermano mayor de Julius. Para Vilma, la calle; para Santiago, un partidito de golf. La novela habla sobre el dolor de crecer y el destino de este personaje marca un traumático final de la niñez para el protagonista.</p>
+                                <div class="character-quote">
+                                    “Vilma adoraba a Julius. Sus orejotas, su pinta increíble habían despertado en ella enorme cariño”.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./img/hombro-2.png" alt="" width="100%" class="hombro-6">
+        </section>
+
+        <!-- Section 3: Sevilla -->
+        <section class="section" id="section-sevilla" data-section="3">
             <div class="section-content">
                 <div class="character-section">
                     <div class="character-layout">
@@ -173,8 +211,8 @@
                         <div class="character-center">
                             <div class="character-image">
                                 <img src="./img/personaje-2.png" alt="Sevilla">
-                                <div class="character-miniature" data-next="manuco">
-                                    <img src="./img/personaje-3.png" alt="Mañuco miniatura">
+                                <div class="character-miniature" data-next="martin">
+                                    <img src="./img/personaje-4.png" alt="Martin Romaña">
                                 </div>
                             </div>
                         </div>
@@ -189,46 +227,8 @@
                     </div>
                 </div>
             </div>
-            <img src="./img/hombro-2.png" alt="" width="100%" class="hombro-2">
-        </section>
-
-        <!-- Section 3: Mañuco -->
-        <section class="section" id="section-manuco" data-section="3">
-            <div class="section-content">
-                <div class="character-section">
-                    <div class="character-layout">
-                        <div class="character-left">
-                            <div class="character-info-box">
-                                <h2>Mañuco</h2>
-                                <p class="subtitle">entre la expectativa familiar y el deseo propio</p>
-                                <div class="circle-info">
-                                    <h3>Dos señoras conversan</h3>
-                                    <p class="year">1990</p>
-                                    <p>¿Hasta dónde estarías dispuesto a llegar con tal de conseguir un objetivo que ni siquiera es tuyo, sino de tus padres?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="character-center">
-                            <div class="character-image">
-                                <img src="./img/personaje-3.png" alt="Mañuco">
-                                <div class="character-miniature" data-next="martin">
-                                    <img src="./img/personaje-4.png" alt="Martín Romaña miniatura">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="character-right">
-                            <div class="character-text-box">                                
-                                <p>En una de las tres novelas breves que componen “Dos señoras conversan”, el personaje Mañuco Cisneros recuerda a la persona que en buena parte forjó su adolescencia. Encontrar la billetera perdida del gringo Pancho Malkovich, ingeniero de la Cerro de Pasco Cooper Corporation, lo puso en lo que entonces creyó que era el camino para cumplir el sueño de sus padres: que estudie en Estados Unidos, lejos del común de los peruanos. Tanto quiso seguir ese camino que incluso dejó plantada a su cita por irse a almorzar con el gringo y su séquito. Años después este encuentro tendrá una resolución entre nostalgia y golpe de realidad.</p>
-                                <div class="character-quote">
-                                    “La moraleja de todo aquello sería papá, mamá, realmente he estado en un lugar donde el diablo perdió el poncho”.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img src="./img/hombro-3.png" alt="" width="100%" class="hombro-3">
-        </section>
+            <img src="./img/hombro-7.png" alt="" width="100%" class="hombro-2">
+        </section>       
 
         <!-- Section 4: Martín Romaña -->
         <section class="section" id="section-martin" data-section="4">
@@ -249,8 +249,8 @@
                         <div class="character-center">
                             <div class="character-image">
                                 <img src="./img/personaje-4.png" alt="Martín Romaña">
-                                <div class="character-miniature" data-next="manongo">
-                                    <img src="./img/personaje-5.png" alt="Manongo Sterne">
+                                <div class="character-miniature" data-next="octavia">
+                                    <img src="./img/personaje-7.png" alt="Octavia de Cadiz">
                                 </div>
                             </div>
                         </div>
@@ -265,11 +265,87 @@
                     </div>
                 </div>
             </div>
-            <img src="./img/hombro-4.png" alt="" width="100%" class="hombro-4">
+            <img src="./img/hombro-3.png" alt="" width="100%" class="hombro-4">
         </section>
 
-        <!-- Section 5: Manongo Sterne -->
-        <section class="section" id="section-manongo" data-section="5">
+        <!-- Section 5: Octavia -->
+        <section class="section" id="section-octavia" data-section="5">
+            <div class="section-content">
+                <div class="character-section">
+                    <div class="character-layout">
+                        <div class="character-left">
+                            <div class="character-info-box">
+                                <h2>Octavia de Cádiz</h2>
+                                <p class="subtitle">la única que aguanta al protagonista</p>
+                                <div class="circle-info">
+                                    <h3>Cuadernos de <br> navegación en un <br> sillón Voltaire</h3>
+                                    <p class="year">1981 - 1985</p>
+                                    <p>De haber sido escrita hoy, internet la llamaría una ‘manic pixie dream girl’, que existe solo para desarrollar al protagonista. Bryce trascendió el cliché antes de que exista con un personaje redondo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-center">
+                            <div class="character-image">
+                                <img src="./img/personaje-7.png" alt="Octavia de Cádiz">
+                                <div class="character-miniature" data-next="manuco">
+                                    <img src="./img/personaje-3.png" alt="Mañuco miniatura">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-right">
+                            <div class="character-text-box">                                
+                                <p>Si la novela se llama “El hombre que hablaba de Octavia de Cádiz”, entonces la mujer tiene que ser central. Descrita como un ser increíblemente miope, de piernas “divertidas”, todo lo que sabemos de Petronila Marie Amélie, alias ‘Octavia’, es por el punto de vista del protagonista, Martín Romaña. Amor platónico, pero también físico y prohibido (es menor de edad y su familia de abolengo rechaza la relación), el lector incluso llega a cuestionarse si es real o un invento del deprimido Romaña, quien de no escribir su prometida novela ha llevado a otro nivel la “vida exagerada” que dio nombre al primer libro. A todo efecto, ella tiene influencia en él, y eso es tan real como la ficción permite.</p>
+                                <div class="character-quote">
+                                    “Octavia lloraba de dieciocho años de edad y yo de treinta y tres, lo cual, la verdad, nos conmovió bastante”.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./img/hombro-5.png" alt="" width="100%" class="hombro-7">
+        </section>
+
+        <!-- Section 6: Mañuco -->
+        <section class="section" id="section-manuco" data-section="6">
+            <div class="section-content">
+                <div class="character-section">
+                    <div class="character-layout">
+                        <div class="character-left">
+                            <div class="character-info-box">
+                                <h2>Mañuco</h2>
+                                <p class="subtitle">entre la expectativa familiar y el deseo propio</p>
+                                <div class="circle-info">
+                                    <h3>Dos señoras conversan</h3>
+                                    <p class="year">1990</p>
+                                    <p>¿Hasta dónde estarías dispuesto a llegar con tal de conseguir un objetivo que ni siquiera es tuyo, sino de tus padres?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-center">
+                            <div class="character-image">
+                                <img src="./img/personaje-3.png" alt="Mañuco">
+                                <div class="character-miniature" data-next="manongo">
+                                    <img src="./img/personaje-5.png" alt="Manongo Sterne miniatura">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="character-right">
+                            <div class="character-text-box">                                
+                                <p>En una de las tres novelas breves que componen “Dos señoras conversan”, el personaje Mañuco Cisneros recuerda a la persona que en buena parte forjó su adolescencia. Encontrar la billetera perdida del gringo Pancho Malkovich, ingeniero de la Cerro de Pasco Cooper Corporation, lo puso en lo que entonces creyó que era el camino para cumplir el sueño de sus padres: que estudie en Estados Unidos, lejos del común de los peruanos. Tanto quiso seguir ese camino que incluso dejó plantada a su cita por irse a almorzar con el gringo y su séquito. Años después este encuentro tendrá una resolución entre nostalgia y golpe de realidad.</p>
+                                <div class="character-quote">
+                                    “La moraleja de todo aquello sería papá, mamá, realmente he estado en un lugar donde el diablo perdió el poncho”.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./img/hombro-8.png" alt="" width="100%" class="hombro-3">
+        </section>
+
+        <!-- Section 7: Manongo Sterne -->
+        <section class="section" id="section-manongo" data-section="7">
             <div class="section-content">
                 <div class="character-section">
                     <div class="character-layout">
@@ -300,78 +376,10 @@
                     </div>
                 </div>
             </div>
-            <img src="./img/hombro-5.png" alt="" width="100%" class="hombro-5">
-        </section>
+            <img src="./img/hombro-4.png" alt="" width="100%" class="hombro-5">
+        </section>        
 
-        <!-- Section 6: Vilma -->
-        <section class="section" id="section-vilma" data-section="6">
-            <div class="section-content">
-                <div class="character-section">
-                    <div class="character-layout">
-                        <div class="character-left">
-                            <div class="character-info-box">
-                                <h2>Vilma</h2>
-                                <p class="subtitle">madre es la que cría</p>
-                                <div class="circle-info">
-                                    <h3>Un mundo <br> para Julius</h3>
-                                    <p class="year">1970</p>
-                                    <p>Víctima de un sistema que solo busca perpetuarse, Vilma hizo todo lo que su entorno esperó de ella y aún así la desecharon.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="character-center">
-                            <div class="character-image">
-                                <img src="./img/personaje-6.png" alt="Manongo Sterne">
-                            </div>
-                        </div>
-                        <div class="character-right">
-                            <div class="character-text-box">                                
-                                <p>Con el punto de vista que Bryce elige para “Un mundo para Julius”, queda claro que el mundo juzga a Vilma por su apariencia: al pensar en ella los adultos primero destacan su origen andino y, segundo, su atractivo físico. Pero donde los demás solo ven con los ojos, Julius vio con el corazón; encontró en ella a la madre que doña Susan eligió no ser. Por eso mismo duele tanto que, cuando ha sufrido violencia en la casa de sus empleadores, estos la despidan y premien a su agresor, hermano mayor de Julius. Para Vilma, la calle; para Santiago, un partidito de golf. La novela habla sobre el dolor de crecer y el destino de este personaje marca un traumático final de la niñez para el protagonista.</p>
-                                <div class="character-quote">
-                                    “Vilma adoraba a Julius. Sus orejotas, su pinta increíble habían despertado en ella enorme cariño”.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img src="./img/hombro-6.png" alt="" width="100%" class="hombro-6">
-        </section>
-
-        <!-- Section 7: Octavia -->
-        <section class="section" id="section-octavia" data-section="7">
-            <div class="section-content">
-                <div class="character-section">
-                    <div class="character-layout">
-                        <div class="character-left">
-                            <div class="character-info-box">
-                                <h2>Octavia de Cádiz</h2>
-                                <p class="subtitle">la única que aguanta al protagonista</p>
-                                <div class="circle-info">
-                                    <h3>Cuadernos de <br> navegación en un <br> sillón Voltaire</h3>
-                                    <p class="year">1981 - 1985</p>
-                                    <p>De haber sido escrita hoy, internet la llamaría una ‘manic pixie dream girl’, que existe solo para desarrollar al protagonista. Bryce trascendió el cliché antes de que exista con un personaje redondo.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="character-center">
-                            <div class="character-image">
-                                <img src="./img/personaje-7.png" alt="Manongo Sterne">
-                            </div>
-                        </div>
-                        <div class="character-right">
-                            <div class="character-text-box">                                
-                                <p>Si la novela se llama “El hombre que hablaba de Octavia de Cádiz”, entonces la mujer tiene que ser central. Descrita como un ser increíblemente miope, de piernas “divertidas”, todo lo que sabemos de Petronila Marie Amélie, alias ‘Octavia’, es por el punto de vista del protagonista, Martín Romaña. Amor platónico, pero también físico y prohibido (es menor de edad y su familia de abolengo rechaza la relación), el lector incluso llega a cuestionarse si es real o un invento del deprimido Romaña, quien de no escribir su prometida novela ha llevado a otro nivel la “vida exagerada” que dio nombre al primer libro. A todo efecto, ella tiene influencia en él, y eso es tan real como la ficción permite.</p>
-                                <div class="character-quote">
-                                    “Octavia lloraba de dieciocho años de edad y yo de treinta y tres, lo cual, la verdad, nos conmovió bastante”.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img src="./img/hombro-7.png" alt="" width="100%" class="hombro-7">
-        </section>
+        
 
     </main>
 

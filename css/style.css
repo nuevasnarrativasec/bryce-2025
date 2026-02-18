@@ -293,9 +293,24 @@ body {
     top: 29%;            
 }
 
+#section-vilma .character-miniature{
+    left: 30%;
+    top: 30%;            
+}
+
 #section-sevilla .character-miniature{
     left: 27%;
     top: 29%;            
+}
+
+#section-martin .character-miniature{
+    left: 30%;
+    top: 29%;            
+}
+
+#section-octavia .character-miniature{
+    left: 30%;
+    top: 33%;            
 }
 
 #section-manuco .character-miniature{
@@ -303,10 +318,7 @@ body {
     top: 34%;            
 }
 
-#section-martin .character-miniature{
-    left: 30%;
-    top: 29%;            
-}
+
 
 .character-layout {
     display: flex;
@@ -475,9 +487,12 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
-    color: #666;
+    color: #fff;
     animation: bounce 2s infinite;
     z-index: 100;
+    font: .9rem / 1.1 "Roboto", sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 0px 2px #2a2a2a;
 }
 
 /* Indicador móvil - oculto en desktop */
