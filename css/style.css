@@ -532,6 +532,10 @@ body {
                     font-weight: 800;
                 }
 
+.box-nombre-movil{
+    display: none;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .character-layout {
@@ -682,7 +686,7 @@ body {
         position: sticky;
         top: 50%;
         transform: translateY(-50%);
-        width: 50%;
+        width: 88%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -721,7 +725,7 @@ body {
         z-index: 10;
     }
 
-    /* CÃ­rculo mÃ³vil - lo movemos aquÃ­ */
+    /* Círculo móvil - lo movemos aquí */
     .mobile-circle-container {
         display: flex;
         justify-content: center;
@@ -767,7 +771,7 @@ body {
         font: 0.85rem/1.4 "Roboto", sans-serif;
     }
 
-    /* Text box mÃ³vil */
+    /* Text box móvil */
     .character-text-box {
         opacity: 0;
         transform: translateY(50px);
@@ -967,6 +971,40 @@ body {
         width: 100%;
     }
 
+    .box-nombre-movil{
+        display: block;
+        position: fixed;
+        text-align: center;
+        top: -35%;
+    }
+        .box-nombre-movil h2{
+            font: 6rem/.9 'Chillends';
+        }
+        .box-nombre-movil .subtitle{
+            font: 1.2rem/1.1 'Behind The Nineties SemiBold';
+            margin-bottom: 30px;
+        }
+
+    #section-martin .box-nombre-movil h2,
+    #section-octavia .box-nombre-movil h2,
+    #section-manuco .box-nombre-movil h2,
+    #section-manongo .box-nombre-movil h2{        
+        font: 4rem / .9 'Chillends';   
+    }
+
+    #section-octavia .character-image{
+        max-width: 40%;
+    }
+    #section-octavia .box-nombre-movil{
+       top: -40%;
+    }
+    #section-manuco .subtitle{
+        max-width: 300px;
+    }
+    #section-manongo .box-nombre-movil{
+       top: -45%;
+    }
+
 }
 
 /* Pantallas muy pequeñas */
@@ -1008,7 +1046,7 @@ body {
     }
 
     .character-image {
-        max-width: 43%;
+        max-width: 25%;
     }
 
     .side-menu{
@@ -1044,6 +1082,10 @@ body {
 
     #section-creditos .section-content{
         justify-content: center;
+    }
+
+    .character-left{
+        
     }
 
 }
