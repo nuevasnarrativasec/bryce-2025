@@ -774,14 +774,67 @@ body {
     }
 
     /* ===== HOMBRO ===== */
-    .hombro-1,
-    .hombro-2 {
-        display: none;
-        position: relative;
+    #section-julius .hombro-1{
+        background: url(../img/hombro-1-movil.png) no-repeat bottom center;
+        background-size: 100%;
+        height: 100vh; 
+        position: fixed;   
         width: 100%;
-        margin-top: -50px;
-        z-index: 15;
-        order: 4;
+        z-index: 10;
+    }
+
+    #section-vilma .hombro-6{
+        background: url(../img/hombro-6-movil.png) no-repeat bottom center;
+        background-size: 100%;
+        height: 100vh; 
+        position: fixed;   
+        width: 100%;
+        z-index: 10;
+    }
+
+    #section-sevilla .hombro-2{
+        background: url(../img/hombro-7-movil.png) no-repeat bottom center;
+        background-size: 100%;
+        height: 100vh; 
+        position: fixed;   
+        width: 100%;
+        z-index: 10;
+    }
+
+    #section-martin .hombro-4{
+        background: url(../img/hombro-3-movil.png) no-repeat bottom center;
+        background-size: 100%;
+        height: 100vh; 
+        position: fixed;   
+        width: 100%;
+        z-index: 10;
+    }
+
+    #section-octavia .hombro-7{
+        background: url(../img/hombro-5-movil.png) no-repeat bottom center;
+        background-size: 100%;
+        height: 100vh; 
+        position: fixed;   
+        width: 100%;
+        z-index: 10;
+    }
+
+    #section-manuco .hombro-3{
+        background: url(../img/hombro-8-movil.jpg) no-repeat bottom center;
+        background-size: 100%;
+        height: 100vh; 
+        position: fixed;   
+        width: 100%;
+        z-index: 10;
+    }
+
+    #section-manongo .hombro-5{
+        background: url(../img/hombro-4-movil.png) no-repeat bottom center;
+        background-size: 100%;
+        height: 100vh; 
+        position: fixed;   
+        width: 100%;
+        z-index: 10;
     }
 
     /* ===== INICIO SECTION ===== */
@@ -823,8 +876,8 @@ body {
     }
 
     .inicio-description {
-        font-size: 1rem;
-        padding: 5px;
+        font-size: 1.1rem;
+        padding: 45px;
         max-width: 100%;
     }
 
@@ -833,7 +886,7 @@ body {
     }
 
     .character-main {
-        width: 250px;
+        width: 100%;
     }
 
     #section-inicio .character-miniature {
@@ -944,6 +997,16 @@ body {
         margin-bottom: 0;
     }
 
+    #section-octavia .character-center{
+        width: 100%;
+    }
+
+    .inicio-description {
+        font-size: 1rem;
+        padding: 0;
+        max-width: 100%;
+    }
+
 }
 
 /* Geometric shapes for decoration */
@@ -970,42 +1033,63 @@ body {
 }
 
 .hombro-1{
-    position: absolute;
+    background: url(../img/hombro-1.png) no-repeat bottom center;
+    background-size: 100%;
+    height: 100vh;
+    position: absolute;   
     width: 100%;
     z-index: 10;
 }
 
 .hombro-2{
+    background: url(../img/hombro-7.png) no-repeat bottom center;
+    background-size: 100%;
+    height: 100vh;
     position: absolute;
     width: 100%;
     z-index: 10;
 }
 
 .hombro-3{
+    background: url(../img/hombro-8.png) no-repeat bottom center;
+    background-size: 100%;
+    height: 100vh;
     position: absolute;
     width: 100%;
     z-index: 10;
 }
 
 .hombro-4{
+    background: url(../img/hombro-3.png) no-repeat bottom center;
+    background-size: 100%;
+    height: 100vh;
     position: absolute;
     width: 100%;
     z-index: 10;
 }
 
 .hombro-5{
+    background: url(../img/hombro-4.png) no-repeat bottom center;
+    background-size: 100%;
+    height: 100vh;
     position: absolute;
     width: 100%;
     z-index: 10;
 }
 
 .hombro-6{
+    background: url(../img/hombro-2.png) no-repeat bottom center;
+    background-size: 100%;
+    height: 100vh;
     position: absolute;
     width: 100%;
     z-index: 10;
 }
 
 .hombro-7{
+    background: url(../img/hombro-5.png) no-repeat bottom center;
+    background-size: 100%;
+    height: 100vh;
     position: absolute;
     width: 100%;
     z-index: 10;
