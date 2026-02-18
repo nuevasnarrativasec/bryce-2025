@@ -304,8 +304,8 @@ body {
 }
 
 #section-martin .character-miniature{
-    left: 30%;
-    top: 29%;            
+    left: 23%;
+    top: 34%;      
 }
 
 #section-octavia .character-miniature{
@@ -314,8 +314,8 @@ body {
 }
 
 #section-manuco .character-miniature{
-    left: 21%;
-    top: 34%;            
+    left: 28%;
+    top: 32%;            
 }
 
 
@@ -1196,7 +1196,7 @@ body {
 }
 
 .hombro-5{
-    background: url(../img/hombro-4.png) no-repeat bottom center;
+    background: url(../img/hombro-6.png) no-repeat bottom center;
     background-size: cover;
     height: 100vh;
     position: absolute;
@@ -1214,7 +1214,7 @@ body {
 }
 
 .hombro-7{
-    background: url(../img/hombro-5.png) no-repeat bottom center;
+    background: url(../img/hombro-4.png) no-repeat bottom center;
     background-size: cover;
     height: 100vh;
     position: absolute;
