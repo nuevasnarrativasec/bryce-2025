@@ -12,28 +12,28 @@
 
 @font-face {
     font-family: 'Behind The Nineties Regular';
-    src: url('../fonts/Behind-The-Nineties-Rg.woff2') format('woff2'),
-        url('../fonts/Behind-The-Nineties-Rg.woff') format('woff');
+    src: url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Behind-The-Nineties-Rg.woff2') format('woff2'),
+        url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Behind-The-Nineties-Rg.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Behind The Nineties SemiBold';
-    src: url('../fonts/Behind-The-Nineties-Smbd.woff2') format('woff2'),
-        url('../fonts/Behind-The-Nineties-Smbd.woff') format('woff');
+    src: url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Behind-The-Nineties-Smbd.woff2') format('woff2'),
+        url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Behind-The-Nineties-Smbd.woff') format('woff');
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'Behind The Nineties Medium';
-    src: url('../fonts/Behind-The-Nineties-Md.woff2') format('woff2'),
-        url('../fonts/Behind-The-Nineties-Md.woff') format('woff');
+    src: url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Behind-The-Nineties-Md.woff2') format('woff2'),
+        url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Behind-The-Nineties-Md.woff') format('woff');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Chillends';
-    src: url('../fonts/Chillends-Script.woff2') format('woff2'),
-        url('../fonts/Chillends-Script.woff') format('woff');
+    src: url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Chillends-Script.woff2') format('woff2'),
+        url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Chillends-Script.woff') format('woff');
     font-style: italic;
 }
 
