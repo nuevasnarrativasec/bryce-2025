@@ -559,6 +559,31 @@ body {
     animation: scroll 1.8s ease-in-out infinite;
 }
 
+#section-cumpleanos .section-content{
+    background: #fff;
+}
+    #section-cumpleanos h4{
+        font: 5rem / 0.2 'Chillends';
+        position: absolute;
+        z-index: 10;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        top: 20%;
+    }
+
+    .video-cumple{
+        width: 25%;
+        height: 70%;
+        object-fit: cover;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: 5;
+        transform: translate(-50%, 0);
+    }
+
 @keyframes scroll {
     0% {
         bottom: 10px;
@@ -1064,6 +1089,13 @@ body {
     #section-manuco h2,
     #section-manuco .subtitle{
         color: #000;
+    }
+
+    .video-cumple{
+        width: 75%;
+    }
+    #section-cumpleanos h4{
+        font: 3rem / 1 'Chillends';
     }
 
 }

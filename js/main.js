@@ -5,10 +5,10 @@ const totalSections = sections.length;
 let isAnimating = false;
 let touchStartY = 0;
 
-// Detectar si es mÃƒÂ³vil
+// Detectar si es mÃƒÆ’Ã‚Â³vil
 const isMobile = () => window.innerWidth <= 768;
 
-// Indicador de scroll mÃƒÂ³vil
+// Indicador de scroll mÃƒÆ’Ã‚Â³vil
 const mobileScrollHint = document.getElementById('mobileScrollHint');
 
 // Menu toggle
@@ -45,7 +45,7 @@ miniatures.forEach(mini => {
     mini.addEventListener('click', (e) => {
         e.stopPropagation();
         
-        // En mÃƒÂ³vil no hacer nada, navegaciÃƒÂ³n solo por scroll
+        // En mÃƒÆ’Ã‚Â³vil no hacer nada, navegaciÃƒÆ’Ã‚Â³n solo por scroll
         if (isMobile()) return;
         
         const nextCharacter = mini.dataset.next;
@@ -114,7 +114,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 // ========================================
-// MÃƒâ€œVIL - Setup estructura
+// MÃƒÆ’Ã¢â‚¬Å“VIL - Setup estructura
 // ========================================
 
 function setupMobileStructure() {
@@ -125,7 +125,7 @@ function setupMobileStructure() {
         const circleInfo = section.querySelector('.character-info-box .circle-info');
         
         if (characterRight && circleInfo && !characterRight.querySelector('.circle-info')) {
-            // Clonar cÃƒÂ­rculo y moverlo al contenedor derecho
+            // Clonar cÃƒÆ’Ã‚Â­rculo y moverlo al contenedor derecho
             const circleClone = circleInfo.cloneNode(true);
             circleClone.classList.add('mobile-circle');
             
@@ -136,7 +136,7 @@ function setupMobileStructure() {
 }
 
 // ========================================
-// MÃƒâ€œVIL - NavegaciÃƒÂ³n con scroll/touch
+// MÃƒÆ’Ã¢â‚¬Å“VIL - NavegaciÃƒÆ’Ã‚Â³n con scroll/touch
 // ========================================
 
 let lastScrollTop = 0;
@@ -146,7 +146,7 @@ let touchStartYMobile = 0;
 let touchMoveAccumulator = 0;
 
 function setupMobileScrollNavigation() {
-    // Touch events para navegaciÃƒÂ³n
+    // Touch events para navegaciÃƒÆ’Ã‚Â³n
     document.addEventListener('touchstart', handleMobileTouchStart, { passive: true });
     document.addEventListener('touchmove', handleMobileTouchMove, { passive: false });
     document.addEventListener('touchend', handleMobileTouchEnd, { passive: true });
@@ -175,11 +175,11 @@ function handleMobileTouchMove(e) {
     const atTop = scrollTop <= 5;
     
     if (atBottom && diff > 0 && currentSection < totalSections - 1) {
-        // Prevenir scroll nativo cuando estamos en el lÃƒÂ­mite
+        // Prevenir scroll nativo cuando estamos en el lÃƒÆ’Ã‚Â­mite
         e.preventDefault();
         touchMoveAccumulator += Math.abs(diff - touchMoveAccumulator) * 0.3;
     } else if (atTop && diff < 0 && currentSection > 0) {
-        // Prevenir scroll nativo cuando estamos en el lÃƒÂ­mite
+        // Prevenir scroll nativo cuando estamos en el lÃƒÆ’Ã‚Â­mite
         e.preventDefault();
         touchMoveAccumulator += Math.abs(diff - touchMoveAccumulator) * 0.3;
     }
@@ -216,7 +216,7 @@ function handleMobileTouchEnd(e) {
 }
 
 // ========================================
-// MÃƒâ€œVIL - Animaciones de scroll
+// MÃƒÆ’Ã¢â‚¬Å“VIL - Animaciones de scroll
 // ========================================
 
 let mobileObservers = [];
@@ -235,7 +235,7 @@ function initMobileScrollAnimations(section) {
     const circleInfo = section.querySelector('.character-right .circle-info');
     const textBox = section.querySelector('.character-text-box');
     
-    // Mostrar indicador de scroll solo si NO es la secciÃƒÂ³n de inicio ni crÃƒÂ©ditos
+    // Mostrar indicador de scroll solo si NO es la secciÃƒÆ’Ã‚Â³n de inicio ni crÃƒÆ’Ã‚Â©ditos
     const isInicio = section.id === 'section-inicio';
     const isCreditos = section.id === 'section-creditos';
     if (mobileScrollHint && !isInicio && !isCreditos) {
@@ -285,7 +285,7 @@ function initMobileScrollAnimations(section) {
         mobileObservers.push(observer);
     };
     
-    // Escuchar scroll de la secciÃƒÂ³n
+    // Escuchar scroll de la secciÃƒÆ’Ã‚Â³n
     section.addEventListener('scroll', scrollHandler, { passive: true });
     section._scrollHandler = scrollHandler;
 }
@@ -299,7 +299,7 @@ function resetMobileAnimations(section) {
 }
 
 // ========================================
-// MÃƒâ€œVIL - NavegaciÃƒÂ³n entre secciones
+// MÃƒÆ’Ã¢â‚¬Å“VIL - NavegaciÃƒÆ’Ã‚Â³n entre secciones
 // ========================================
 
 function navigateToSectionMobile(targetIndex, isGoingBack = false) {
@@ -313,7 +313,7 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
     
     const goingForward = targetIndex > currentSection;
     
-    // AnimaciÃƒÂ³n de salida
+    // AnimaciÃƒÆ’Ã‚Â³n de salida
     currentContent.style.transformOrigin = 'center center';
     if (goingForward) {
         currentContent.style.transform = 'scale(2)';
@@ -324,7 +324,7 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
     currentContent.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
     
     setTimeout(() => {
-        // Reset secciÃƒÂ³n actual
+        // Reset secciÃƒÆ’Ã‚Â³n actual
         currentContent.style.transform = '';
         currentContent.style.transformOrigin = '';
         currentContent.style.opacity = '';
@@ -336,11 +336,11 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
         // Reset animaciones
         resetMobileAnimations(targetSectionEl);
         
-        // Mostrar nueva secciÃƒÂ³n
+        // Mostrar nueva secciÃƒÆ’Ã‚Â³n
         targetSectionEl.classList.add('mobile-active');
         targetSectionEl.scrollTop = 0;
         
-        // AnimaciÃƒÂ³n de entrada
+        // AnimaciÃƒÆ’Ã‚Â³n de entrada
         const targetContent = targetSectionEl.querySelector('.section-content');
         targetContent.style.transform = goingForward ? 'scale(0.5)' : 'scale(2)';
         targetContent.style.opacity = '0';
@@ -357,6 +357,8 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
                 // Reset touch variables
                 touchMoveAccumulator = 0;
                 
+                handleVideoPlayback(targetSectionEl, currentSectionEl);
+                
                 initMobileScrollAnimations(targetSectionEl);
                 
                 isAnimating = false;
@@ -366,7 +368,7 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
 }
 
 // ========================================
-// DESKTOP - NavegaciÃƒÂ³n
+// DESKTOP - NavegaciÃƒÆ’Ã‚Â³n
 // ========================================
 
 function navigateToSection(targetIndex, miniatureElement = null) {
@@ -451,6 +453,8 @@ function navigateToSection(targetIndex, miniatureElement = null) {
                 
                 animateInfoBoxes(targetSectionEl);
                 
+                handleVideoPlayback(targetSectionEl, currentSectionEl);
+                
                 currentSection = targetIndex;
                 
                 updateScrollIndicator();
@@ -494,13 +498,39 @@ function updateScrollIndicator() {
 }
 
 // ========================================
-// INICIALIZACIÃƒâ€œN
+// VIDEO - Reproducción automática
+// ========================================
+
+function handleVideoPlayback(enteringSection, leavingSection) {
+    // Pausar y reiniciar video de la sección que se abandona
+    if (leavingSection) {
+        const leavingVideo = leavingSection.querySelector('video');
+        if (leavingVideo) {
+            leavingVideo.pause();
+            leavingVideo.currentTime = 0;
+        }
+    }
+    // Reproducir video de la sección que se activa
+    if (enteringSection) {
+        const enteringVideo = enteringSection.querySelector('video');
+        if (enteringVideo) {
+            enteringVideo.currentTime = 0;
+            enteringVideo.play().catch(() => {
+                // Autoplay bloqueado por el navegador: intentar de nuevo con interacción
+                enteringSection.addEventListener('click', () => enteringVideo.play(), { once: true });
+            });
+        }
+    }
+}
+
+// ========================================
+// INICIALIZACIÃƒÆ’Ã¢â‚¬Å“N
 // ========================================
 
 function initMobile() {
     document.body.classList.add('mobile-mode');
     
-    // Setup estructura mÃƒÂ³vil
+    // Setup estructura mÃƒÆ’Ã‚Â³vil
     setupMobileStructure();
     
     sections.forEach((section, index) => {
@@ -514,7 +544,7 @@ function initMobile() {
         }
     });
     
-    // Setup navegaciÃƒÂ³n y animaciones
+    // Setup navegaciÃƒÆ’Ã‚Â³n y animaciones
     setupMobileScrollNavigation();
     initMobileScrollAnimations(sections[currentSection]);
 }
