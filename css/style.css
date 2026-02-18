@@ -608,6 +608,17 @@ body {
     }
 }
 /* Responsive */
+
+/* iPad Air */
+@media (max-width: 1180px) and (orientation: landscape) {
+
+    .character-layout{
+        gap: 0;
+    }
+    
+
+}
+
 @media (max-width: 1024px) {
     .character-layout {
         /*flex-direction: column;
