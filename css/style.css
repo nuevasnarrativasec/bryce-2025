@@ -1079,7 +1079,7 @@ body {
         top: -35%;
     }
         .box-nombre-movil h2{
-            font: 6rem/.9 'Chillends';
+            font: 6rem/.9 "Mr Dafoe", cursive;
         }
         .box-nombre-movil .subtitle{
             font: 1.2rem/1.1 'Behind The Nineties SemiBold';
@@ -1133,10 +1133,11 @@ body {
         .inicio-title{
             font-size: 1.6rem;
             margin-bottom: 4rem;
+            padding-left: 45px;
         }
         .inicio-title .bryce {
             font-size: 8rem;
-            left: -15px;
+            left: -40px;
         }
 
     .character-info-box h2 {
