@@ -32,10 +32,19 @@
 
 @font-face {
     font-family: 'Chillends';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Chillends'), url('https://fonts.cdnfonts.com/s/119944/ChillendsScript-ov3zo.woff') format('woff');
+}
+/*
+@font-face {
+    font-family: 'Chillends';
     src: url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Chillends-Script.woff2') format('woff2'),
         url('https://nuevasnarrativasec.github.io/bryce-2025/fonts/Chillends-Script.woff') format('woff');
     font-style: italic;
 }
+
+*/
 
 body {
     font-family: 'Georgia', serif;
