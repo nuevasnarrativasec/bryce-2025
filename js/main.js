@@ -5,10 +5,10 @@ const totalSections = sections.length;
 let isAnimating = false;
 let touchStartY = 0;
 
-// Detectar si es mÃ³vil
+// Detectar si es mÃƒÂ³vil
 const isMobile = () => window.innerWidth <= 768;
 
-// Indicador de scroll mÃ³vil
+// Indicador de scroll mÃƒÂ³vil
 const mobileScrollHint = document.getElementById('mobileScrollHint');
 
 // Menu toggle
@@ -45,7 +45,7 @@ miniatures.forEach(mini => {
     mini.addEventListener('click', (e) => {
         e.stopPropagation();
         
-        // En mÃ³vil no hacer nada, navegaciÃ³n solo por scroll
+        // En mÃƒÂ³vil no hacer nada, navegaciÃƒÂ³n solo por scroll
         if (isMobile()) return;
         
         const nextCharacter = mini.dataset.next;
@@ -114,7 +114,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 // ========================================
-// MÃ“VIL - Setup estructura
+// MÃƒâ€œVIL - Setup estructura
 // ========================================
 
 function setupMobileStructure() {
@@ -125,7 +125,7 @@ function setupMobileStructure() {
         const circleInfo = section.querySelector('.character-info-box .circle-info');
         
         if (characterRight && circleInfo && !characterRight.querySelector('.circle-info')) {
-            // Clonar cÃ­rculo y moverlo al contenedor derecho
+            // Clonar cÃƒÂ­rculo y moverlo al contenedor derecho
             const circleClone = circleInfo.cloneNode(true);
             circleClone.classList.add('mobile-circle');
             
@@ -136,7 +136,7 @@ function setupMobileStructure() {
 }
 
 // ========================================
-// MÃ“VIL - NavegaciÃ³n con scroll/touch
+// MÃƒâ€œVIL - NavegaciÃƒÂ³n con scroll/touch
 // ========================================
 
 let lastScrollTop = 0;
@@ -146,7 +146,7 @@ let touchStartYMobile = 0;
 let touchMoveAccumulator = 0;
 
 function setupMobileScrollNavigation() {
-    // Touch events para navegaciÃ³n
+    // Touch events para navegaciÃƒÂ³n
     document.addEventListener('touchstart', handleMobileTouchStart, { passive: true });
     document.addEventListener('touchmove', handleMobileTouchMove, { passive: false });
     document.addEventListener('touchend', handleMobileTouchEnd, { passive: true });
@@ -175,11 +175,11 @@ function handleMobileTouchMove(e) {
     const atTop = scrollTop <= 5;
     
     if (atBottom && diff > 0 && currentSection < totalSections - 1) {
-        // Prevenir scroll nativo cuando estamos en el lÃ­mite
+        // Prevenir scroll nativo cuando estamos en el lÃƒÂ­mite
         e.preventDefault();
         touchMoveAccumulator += Math.abs(diff - touchMoveAccumulator) * 0.3;
     } else if (atTop && diff < 0 && currentSection > 0) {
-        // Prevenir scroll nativo cuando estamos en el lÃ­mite
+        // Prevenir scroll nativo cuando estamos en el lÃƒÂ­mite
         e.preventDefault();
         touchMoveAccumulator += Math.abs(diff - touchMoveAccumulator) * 0.3;
     }
@@ -216,7 +216,7 @@ function handleMobileTouchEnd(e) {
 }
 
 // ========================================
-// MÃ“VIL - Animaciones de scroll
+// MÃƒâ€œVIL - Animaciones de scroll
 // ========================================
 
 let mobileObservers = [];
@@ -235,9 +235,10 @@ function initMobileScrollAnimations(section) {
     const circleInfo = section.querySelector('.character-right .circle-info');
     const textBox = section.querySelector('.character-text-box');
     
-    // Mostrar indicador de scroll solo si NO es la secciÃ³n de inicio
+    // Mostrar indicador de scroll solo si NO es la secciÃƒÂ³n de inicio ni crÃƒÂ©ditos
     const isInicio = section.id === 'section-inicio';
-    if (mobileScrollHint && !isInicio) {
+    const isCreditos = section.id === 'section-creditos';
+    if (mobileScrollHint && !isInicio && !isCreditos) {
         mobileScrollHint.classList.remove('hidden');
         mobileScrollHint.classList.add('visible');
     } else if (mobileScrollHint) {
@@ -284,7 +285,7 @@ function initMobileScrollAnimations(section) {
         mobileObservers.push(observer);
     };
     
-    // Escuchar scroll de la secciÃ³n
+    // Escuchar scroll de la secciÃƒÂ³n
     section.addEventListener('scroll', scrollHandler, { passive: true });
     section._scrollHandler = scrollHandler;
 }
@@ -298,7 +299,7 @@ function resetMobileAnimations(section) {
 }
 
 // ========================================
-// MÃ“VIL - NavegaciÃ³n entre secciones
+// MÃƒâ€œVIL - NavegaciÃƒÂ³n entre secciones
 // ========================================
 
 function navigateToSectionMobile(targetIndex, isGoingBack = false) {
@@ -312,7 +313,7 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
     
     const goingForward = targetIndex > currentSection;
     
-    // AnimaciÃ³n de salida
+    // AnimaciÃƒÂ³n de salida
     currentContent.style.transformOrigin = 'center center';
     if (goingForward) {
         currentContent.style.transform = 'scale(2)';
@@ -323,7 +324,7 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
     currentContent.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
     
     setTimeout(() => {
-        // Reset secciÃ³n actual
+        // Reset secciÃƒÂ³n actual
         currentContent.style.transform = '';
         currentContent.style.transformOrigin = '';
         currentContent.style.opacity = '';
@@ -335,11 +336,11 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
         // Reset animaciones
         resetMobileAnimations(targetSectionEl);
         
-        // Mostrar nueva secciÃ³n
+        // Mostrar nueva secciÃƒÂ³n
         targetSectionEl.classList.add('mobile-active');
         targetSectionEl.scrollTop = 0;
         
-        // AnimaciÃ³n de entrada
+        // AnimaciÃƒÂ³n de entrada
         const targetContent = targetSectionEl.querySelector('.section-content');
         targetContent.style.transform = goingForward ? 'scale(0.5)' : 'scale(2)';
         targetContent.style.opacity = '0';
@@ -365,7 +366,7 @@ function navigateToSectionMobile(targetIndex, isGoingBack = false) {
 }
 
 // ========================================
-// DESKTOP - NavegaciÃ³n
+// DESKTOP - NavegaciÃƒÂ³n
 // ========================================
 
 function navigateToSection(targetIndex, miniatureElement = null) {
@@ -493,13 +494,13 @@ function updateScrollIndicator() {
 }
 
 // ========================================
-// INICIALIZACIÃ“N
+// INICIALIZACIÃƒâ€œN
 // ========================================
 
 function initMobile() {
     document.body.classList.add('mobile-mode');
     
-    // Setup estructura mÃ³vil
+    // Setup estructura mÃƒÂ³vil
     setupMobileStructure();
     
     sections.forEach((section, index) => {
@@ -513,7 +514,7 @@ function initMobile() {
         }
     });
     
-    // Setup navegaciÃ³n y animaciones
+    // Setup navegaciÃƒÂ³n y animaciones
     setupMobileScrollNavigation();
     initMobileScrollAnimations(sections[currentSection]);
 }

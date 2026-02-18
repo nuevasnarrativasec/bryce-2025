@@ -541,6 +541,13 @@ body {
     color: #fff;
 }
 
+.btn-inicio{
+    max-width: 75px;
+    margin: 10px auto;
+    display: block;
+    cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .character-layout {
@@ -870,7 +877,7 @@ body {
     #section-inicio .section-content {
         min-height: 100vh;
         min-height: 100dvh;
-        justify-content: center;
+        justify-content: end;
         padding: 50px 20px 0;
     }
 
