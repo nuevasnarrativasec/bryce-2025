@@ -113,6 +113,7 @@ body {
 .side-menu.active {
     opacity: 1;
     visibility: visible;
+    overflow-y: scroll;
 }
 
 .menu-title {
@@ -955,6 +956,36 @@ body {
 }
 
 .hombro-2{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.hombro-3{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.hombro-4{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.hombro-5{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.hombro-6{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.hombro-7{
     position: absolute;
     width: 100%;
     z-index: 10;
