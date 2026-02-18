@@ -1034,7 +1034,7 @@ body {
 
 .hombro-1{
     background: url(../img/hombro-1.png) no-repeat bottom center;
-    background-size: 100%;
+    background-size: cover;
     height: 100vh;
     position: absolute;   
     width: 100%;
@@ -1043,7 +1043,7 @@ body {
 
 .hombro-2{
     background: url(../img/hombro-7.png) no-repeat bottom center;
-    background-size: 100%;
+    background-size: cover;
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -1052,7 +1052,7 @@ body {
 
 .hombro-3{
     background: url(../img/hombro-8.png) no-repeat bottom center;
-    background-size: 100%;
+    background-size: cover;
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -1061,7 +1061,7 @@ body {
 
 .hombro-4{
     background: url(../img/hombro-3.png) no-repeat bottom center;
-    background-size: 100%;
+    background-size: cover;
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -1070,7 +1070,7 @@ body {
 
 .hombro-5{
     background: url(../img/hombro-4.png) no-repeat bottom center;
-    background-size: 100%;
+    background-size: cover;
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -1079,7 +1079,7 @@ body {
 
 .hombro-6{
     background: url(../img/hombro-2.png) no-repeat bottom center;
-    background-size: 100%;
+    background-size: cover;
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -1088,7 +1088,7 @@ body {
 
 .hombro-7{
     background: url(../img/hombro-5.png) no-repeat bottom center;
-    background-size: 100%;
+    background-size: cover;
     height: 100vh;
     position: absolute;
     width: 100%;
